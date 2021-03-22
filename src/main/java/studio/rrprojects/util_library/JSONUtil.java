@@ -81,4 +81,64 @@ public class JSONUtil {
 
         return myMap;
     }
+
+    /**
+     * MinimalJson has a nice built in defaulter for the get function if the key is not present, this recreates that for org.json
+     * String Version
+     *
+     * @param object input JSONObject
+     * @param searchKey String the key you are looking for
+     * @param defaultsTo String if the key is not present, default to this string
+     * @return String
+     */
+    public static String getString(JSONObject object, String searchKey, String defaultsTo) {
+        String result;
+
+        try {
+            result = object.getString(searchKey);
+        } catch (Exception e) {
+            result = defaultsTo;
+        }
+        return result;
+    }
+
+    /**
+     * MinimalJson has a nice built in defaulter for the get function if the key is not present, this recreates that for org.json
+     * int Version
+     *
+     * @param object input JSONObject
+     * @param searchKey String the key you are looking for
+     * @param defaultsTo int if the key is not present, default to this int
+     * @return int
+     */
+    public static int getInt(JSONObject object, String searchKey, int defaultsTo) {
+        int result;
+
+        try {
+            result = object.getInt(searchKey);
+        } catch (Exception e) {
+            result = defaultsTo;
+        }
+        return result;
+    }
+
+    /**
+     * MinimalJson has a nice built in defaulter for the get function if the key is not present, this recreates that for org.json
+     * Boolean Version
+     *
+     * @param object input JSONObject
+     * @param searchKey String the key you are looking for
+     * @param defaultsTo boolean if the key is not present, default to this boolean
+     * @return boolean
+     */
+    public static boolean getBool(JSONObject object, String searchKey, boolean defaultsTo) {
+        boolean result;
+
+        try {
+            result = object.getBoolean(searchKey);
+        } catch (Exception e) {
+            result = defaultsTo;
+        }
+        return result;
+    }
 }
