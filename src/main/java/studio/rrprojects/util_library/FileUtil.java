@@ -6,8 +6,15 @@
 
 package studio.rrprojects.util_library;
 
-import java.io.File;
-import java.io.IOException;
+import org.json.JSONObject;
+import org.json.JSONTokener;
+
+import java.io.*;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.util.List;
 
 public class FileUtil {
 
@@ -35,6 +42,73 @@ public class FileUtil {
         }
 
         return file;
+    }
+
+    public static File loadFileFromResource(String path) throws URISyntaxException {
+        InputStream is = FileUtil.class.getResourceAsStream(path);
+        printInputStream(is);
+
+        System.out.println("\ngetResource : " + path);
+        File file = getFileFromResource(path);
+        printFile(file);
+
+        return null;
+    }
+
+    public static JSONObject getJsonFromResource(String path) {
+        InputStream is = FileUtil.class.getResourceAsStream(path);
+
+        assert is != null;
+        JSONTokener token = new JSONTokener(is);
+
+        return new JSONObject(token);
+    }
+
+    // print input stream
+    private static void printInputStream(InputStream is) {
+
+        try (InputStreamReader streamReader =
+                     new InputStreamReader(is, StandardCharsets.UTF_8);
+             BufferedReader reader = new BufferedReader(streamReader)) {
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    // print a file
+    private static void printFile(File file) {
+
+        List<String> lines;
+        try {
+            lines = Files.readAllLines(file.toPath(), StandardCharsets.UTF_8);
+            lines.forEach(System.out::println);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private static File getFileFromResource(String fileName) throws URISyntaxException {
+
+        ClassLoader classLoader = FileUtil.class.getClassLoader();
+        URL resource = classLoader.getResource(fileName);
+        if (resource == null) {
+            throw new IllegalArgumentException("file not found! " + fileName);
+        } else {
+
+            // failed if files have whitespaces or special characters
+            //return new File(resource.getFile());
+
+            return new File(resource.toURI());
+        }
+
     }
 
     /**
