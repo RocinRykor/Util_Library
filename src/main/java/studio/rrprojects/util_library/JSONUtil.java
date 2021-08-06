@@ -10,6 +10,7 @@ import org.json.JSONObject;
 import org.json.JSONTokener;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -80,6 +81,25 @@ public class JSONUtil {
         });
 
         return myMap;
+    }
+
+    /**
+     * Based on the way I set up my json files, I someimes want to just have a nice list of all the objects
+     * This returns all the first level objects in the file as a <JSONObject> ArrayList
+     *
+     * @param jsonObject input JSONObject
+     * @return ArrayList<JSONObject>
+     */
+    public static ArrayList<JSONObject> JsonToArrayList(JSONObject jsonObject) {
+
+        ArrayList<JSONObject> myList = new ArrayList<>();
+        Map<String, Object> tmpMap = jsonObject.toMap();
+
+        tmpMap.forEach((key, value) -> {
+            myList.add(jsonObject.getJSONObject(key));
+        });
+
+        return myList;
     }
 
     /**
