@@ -161,4 +161,15 @@ public class JSONUtil {
         }
         return result;
     }
+
+    public static double getDouble(JSONObject object, String searchKey, double defaultsTo) {
+        double result;
+
+        try {
+            result = object.getDouble(searchKey);
+        } catch (Exception e) {
+            result = defaultsTo;
+        }
+        return result;
+    }
 }
