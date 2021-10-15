@@ -58,7 +58,11 @@ public class FileUtil {
     public static JSONObject getJsonFromResource(String path) {
         InputStream is = FileUtil.class.getResourceAsStream(path);
 
-        assert is != null;
+        if (is == null) {
+            DebugUtils.ErrorMsg("INPUT STREAM IS NULL: " + path);
+            return null;
+        }
+
         JSONTokener token = new JSONTokener(is);
 
         return new JSONObject(token);
