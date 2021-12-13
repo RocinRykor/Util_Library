@@ -48,11 +48,11 @@ public class FileUtil {
         InputStream is = FileUtil.class.getResourceAsStream(path);
         printInputStream(is);
 
-        System.out.println("\ngetResource : " + path);
+        System.out.println("getResource: " + path);
         File file = getFileFromResource(path);
         printFile(file);
 
-        return null;
+        return file;
     }
 
     public static JSONObject getJsonFromResource(String path) {
