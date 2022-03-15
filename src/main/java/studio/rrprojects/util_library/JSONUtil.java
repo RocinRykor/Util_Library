@@ -180,8 +180,11 @@ public class JSONUtil {
      * @param object input JSONObject
      * @return JSONObject
      */
-    public static JSONObject getFirstIndex(JSONObject object){
-        ArrayList keySet = new ArrayList(List.of(object.keySet().toArray()));
-        return (JSONObject) keySet.get(0);
+    public static JSONObject getFirstIndex(JSONObject object) {
+        for (String s : object.keySet()) {
+            return object.getJSONObject(s);
+        }
+
+        return null;
     }
 }
