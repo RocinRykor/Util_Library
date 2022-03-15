@@ -12,6 +12,7 @@ import org.json.JSONTokener;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class JSONUtil {
@@ -171,5 +172,16 @@ public class JSONUtil {
             result = defaultsTo;
         }
         return result;
+    }
+
+    /**
+     * returns the first JsonObject present in the provided object.
+     * Useful for if you need information that is stored a layer down
+     * @param object input JSONObject
+     * @return JSONObject
+     */
+    public static Object getFirstIndex(JSONObject object){
+        ArrayList keySet = new ArrayList(List.of(object.keySet().toArray()));
+        return keySet.get(0);
     }
 }
