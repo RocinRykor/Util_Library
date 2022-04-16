@@ -12,7 +12,6 @@ import org.json.JSONTokener;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class JSONUtil {
@@ -85,7 +84,7 @@ public class JSONUtil {
     }
 
     /**
-     * Based on the way I set up my json files, I someimes want to just have a nice list of all the objects
+     * Based on the way I set up my json files, I sometimes want to just have a nice list of all the objects
      * This returns all the first level objects in the file as a <JSONObject> ArrayList
      *
      * @param jsonObject input JSONObject
@@ -124,7 +123,7 @@ public class JSONUtil {
     }
 
     /**
-     * MinimalJson has a nice built in defaulter for the get function if the key is not present, this recreates that for org.json
+     * MinimalJson has a nice built-in defaulter for the get function if the key is not present, this recreates that for org.json
      * int Version
      *
      * @param object input JSONObject
@@ -144,7 +143,7 @@ public class JSONUtil {
     }
 
     /**
-     * MinimalJson has a nice built in defaulter for the get function if the key is not present, this recreates that for org.json
+     * MinimalJson has a nice built-in defaulter for the get function if the key is not present, this recreates that for org.json
      * Boolean Version
      *
      * @param object input JSONObject

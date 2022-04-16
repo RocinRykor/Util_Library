@@ -25,7 +25,6 @@ public class FileUtil {
      * @param path The complete string path to a file - example - "/home/user/Documents/Test/Library/Testing.txt"
      * @return this file
      */
-
     public static File loadFileFromPath(String path) {
         File file = new File(path);
 
@@ -132,7 +131,7 @@ public class FileUtil {
     /**
      *  Loads a creates all subdirectories along a given path, then loads the file in the directory, creating it as needed
      *
-     * @param dirPath The complete string path to a a directory - example - "/home/user/Documents/Test/Library"
+     * @param dirPath The complete string path to a directory - example - "/home/user/Documents/Test/Library"
      * @param fileName Name of the final in the indicated directory - example "Testing.txt" 
      */
 

@@ -3,7 +3,7 @@ package studio.rrprojects.util_library;
 public class DebugUtils {
 
     /**
-     *  returns a System Out Message colored using escpae colors
+     *  returns a System Out Message colored using escape colors
      *
      * @param escapeColor Uses escape code colors
      * @param message Message to be displayed
