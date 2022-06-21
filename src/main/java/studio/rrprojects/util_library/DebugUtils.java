@@ -27,7 +27,7 @@ public class DebugUtils {
         newDebugOut(ConsoleColors.GREEN, message);
     }
 
-    public static void VaraibleMsg(String message) {
+    public static void VariableMsg(String message) {
         newDebugOut(ConsoleColors.BLUE, message);
     }
 
