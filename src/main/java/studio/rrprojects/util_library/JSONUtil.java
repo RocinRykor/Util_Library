@@ -103,7 +103,7 @@ public class JSONUtil {
     }
 
     /**
-     * MinimalJson has a nice built in defaulter for the get function if the key is not present, this recreates that for org.json
+     * MinimalJson has a nice built-in defaulter for the get function if the key is not present, this recreates that for org.json
      * String Version
      *
      * @param object input JSONObject
@@ -162,11 +162,40 @@ public class JSONUtil {
         return result;
     }
 
+    /**
+     * MinimalJson has a nice built-in defaulter for the get function if the key is not present, this recreates that for org.json
+     * Double Version
+     *
+     * @param object input JSONObject
+     * @param searchKey String the key you are looking for
+     * @param defaultsTo boolean if the key is not present, default to this double
+     * @return double
+     */
     public static double getDouble(JSONObject object, String searchKey, double defaultsTo) {
         double result;
 
         try {
             result = object.getDouble(searchKey);
+        } catch (Exception e) {
+            result = defaultsTo;
+        }
+        return result;
+    }
+
+    /**
+     * MinimalJson has a nice built-in defaulter for the get function if the key is not present, this recreates that for org.json
+     * JSONObject Version
+     *
+     * @param object input JSONObject
+     * @param searchKey String the key you are looking for
+     * @param defaultsTo boolean if the key is not present, default to this JSONObject
+     * @return JSONObject
+     */
+    public static JSONObject getJSONObject(JSONObject object, String searchKey, JSONObject defaultsTo) {
+        JSONObject result;
+
+        try {
+            result = object.getJSONObject(searchKey);
         } catch (Exception e) {
             result = defaultsTo;
         }
