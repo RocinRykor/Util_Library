@@ -6,6 +6,7 @@
 
 package studio.rrprojects.util_library;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
@@ -214,5 +215,22 @@ public class JSONUtil {
         }
 
         return null;
+    }
+
+    /**
+     * Converts a JSONArray into a String array.
+     *
+     * @param jsonArray the JSONArray to be converted
+     * @return a String array representing the elements in the JSONArray
+     */
+    public String[] jsonArrayToStringArray(JSONArray jsonArray) {
+        int length = jsonArray.length();
+        String[] stringArray = new String[length];
+
+        for (int i = 0; i < length; i++) {
+            stringArray[i] = jsonArray.getString(i);
+        }
+
+        return stringArray;
     }
 }

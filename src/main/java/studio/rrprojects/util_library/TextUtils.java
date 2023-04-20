@@ -8,7 +8,14 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 public class TextUtils {
+
+    /**
+     Converts a given string to title case, i.e., capitalizes the first letter of each word in the string.
+     @param input the string to be converted to title case
+     @return the string in title case
+     */
     public static String titleCase(String input) {
+
         StringBuilder titleCase = new StringBuilder(input.length());
         boolean nextTitleCase = true;
 
