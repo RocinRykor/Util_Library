@@ -223,7 +223,7 @@ public class JSONUtil {
      * @param jsonArray the JSONArray to be converted
      * @return a String array representing the elements in the JSONArray
      */
-    public String[] jsonArrayToStringArray(JSONArray jsonArray) {
+    public static String[] jsonArrayToStringArray(JSONArray jsonArray) {
         int length = jsonArray.length();
         String[] stringArray = new String[length];
 
