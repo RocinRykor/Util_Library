@@ -2,7 +2,7 @@
  * @Author Steven Briggs
  * @Version 1.0
  * @Date 02-26-21
- * */
+ */
 
 package studio.rrprojects.util_library;
 
@@ -16,7 +16,7 @@ public class MathUtil {
      * @return random value between min and max. If min > max, returns min
      *
      */
-    
+
     public static int getRandomRange(int min, int max) {
 
         if (min > max) {
@@ -24,6 +24,6 @@ public class MathUtil {
             return min;
         }
 
-        return (int) ((Math.random() * (1 + max-min)) + min);
+        return (int) ((Math.random() * (1 + max - min)) + min);
     }
 }

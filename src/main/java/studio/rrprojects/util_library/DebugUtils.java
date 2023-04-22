@@ -3,12 +3,11 @@ package studio.rrprojects.util_library;
 public class DebugUtils {
 
     /**
-     *  returns a System Out Message colored using escape colors
+     * returns a System Out Message colored using escape colors
      *
      * @param escapeColor Uses escape code colors
-     * @param message Message to be displayed
+     * @param message     Message to be displayed
      * @return Outputs a message to the console using escape code colors, for best results use ConsoleColors.class
-     *
      */
 
     public static void newDebugOut(String escapeColor, String message) {

@@ -14,7 +14,7 @@ public class Main {
         String inputFileName = "input.json";
         String outputFileName = "output.json";
 
-        JSONObject object =JSONUtil.loadJsonFromFile(FileUtil.loadFileFromPath(dirPath + inputFileName));
+        JSONObject object = JSONUtil.loadJsonFromFile(FileUtil.loadFileFromPath(dirPath + inputFileName));
 
         JSONUtil.WriteJsonToFile(object, FileUtil.loadFileFromPath(dirPath + outputFileName));
     }

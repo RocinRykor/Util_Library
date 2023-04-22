@@ -2,7 +2,7 @@
  * @Author Steven Briggs
  * @Version 1.0
  * @Date 02-26-21
- * */
+ */
 
 package studio.rrprojects.util_library;
 
@@ -137,9 +137,9 @@ public class FileUtil {
 
     public static void createDirAndLoadFile(String dirPath, String fileName) {
         CreateDir(dirPath);
-        
+
         String filepath = dirPath + File.separator + fileName;
-        
+
         loadFileFromPath(filepath);
     }
 }

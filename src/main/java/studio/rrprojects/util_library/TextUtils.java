@@ -10,9 +10,10 @@ import java.util.Locale;
 public class TextUtils {
 
     /**
-     Converts a given string to title case, i.e., capitalizes the first letter of each word in the string.
-     @param input the string to be converted to title case
-     @return the string in title case
+     * Converts a given string to title case, i.e., capitalizes the first letter of each word in the string.
+     *
+     * @param input the string to be converted to title case
+     * @return the string in title case
      */
     public static String titleCase(String input) {
 
@@ -34,7 +35,8 @@ public class TextUtils {
     }
 
     /**
-     *  Shadowrun Specific, converts and integer to a more readable number (separated with commas) and adds the nuyen ¥ symbol to the end
+     * Shadowrun Specific, converts and integer to a more readable number (separated with commas) and adds the nuyen ¥ symbol to the end
+     *
      * @param input Integer
      * @return String formatted and with currency symbol on the back
      */
@@ -46,9 +48,9 @@ public class TextUtils {
 
     /**
      * Changes all underscores in a string to spaces
+     *
      * @param input String with underscores
      * @return Outputs a String with spaces instead of underscores
-     *
      */
     public static String convertUnderscoreToSpace(String input) {
         return input.replaceAll("_", " ");
