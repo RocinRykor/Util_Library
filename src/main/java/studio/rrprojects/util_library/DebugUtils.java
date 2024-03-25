@@ -34,5 +34,9 @@ public class DebugUtils {
         newDebugOut(ConsoleColors.PURPLE, message);
     }
 
+    public static void DebugMsg(String message) {
+        newDebugOut(ConsoleColors.CYAN, message);
+    }
+
 
 }
