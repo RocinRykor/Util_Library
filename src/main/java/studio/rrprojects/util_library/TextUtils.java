@@ -56,6 +56,30 @@ public class TextUtils {
         return input.replaceAll("_", " ");
     }
 
+
+    /**
+     * Returns the approprate indefinate article ("a" or "an") for a given string
+     *
+     * @param string
+     * @return string
+     */
+    public static String getIndefiniteArticle(String word) {
+        // Check if the word starts with a vowel sound
+        if (startsWithVowelSound(word)) {
+            return "an";
+        } else {
+            return "a";
+        }
+    }
+
+    private static boolean startsWithVowelSound(String word) {
+        // Convert word to lowercase for case-insensitive comparison
+        String lowerCaseWord = word.toLowerCase();
+
+        // Check if the word starts with a vowel sound
+        return lowerCaseWord.matches("^(e[aeiou]|h(ono?|our)|onc?e|uni(l|que)|u[bcfhkrst]?|yt)|[aeio]|([aeiou].*)");
+    }
+
     public static void CenterPaneText(JTextPane textPane) {
         //I don't know exactly how this works yet, but it does so that's all that matters
         StyledDocument doc = textPane.getStyledDocument();

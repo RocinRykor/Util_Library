@@ -9,5 +9,8 @@
         <module name="Util_Library" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Util_Library" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
